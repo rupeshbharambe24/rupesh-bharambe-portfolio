@@ -3,23 +3,6 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
-const RAINBOW = [
-  "#ff0000",
-  "#ff5500",
-  "#ffaa00",
-  "#ffff00",
-  "#aaff00",
-  "#00ff00",
-  "#00ffaa",
-  "#00ffff",
-  "#00aaff",
-  "#0055ff",
-  "#5500ff",
-  "#aa00ff",
-  "#ff00ff",
-  "#ff00aa",
-];
-
 export function CustomCursor() {
   const [visible, setVisible] = useState(false);
   const [clicking, setClicking] = useState(false);
@@ -40,7 +23,7 @@ export function CustomCursor() {
 
       dotIdRef.current++;
       const newDot = { id: dotIdRef.current, x: e.clientX, y: e.clientY };
-      setTrailDots((prev) => [...prev.slice(-18), newDot]);
+      setTrailDots((prev) => [...prev.slice(-14), newDot]);
     },
     [cursorX, cursorY]
   );
@@ -95,7 +78,7 @@ export function CustomCursor() {
     if (trailDots.length === 0) return;
     const timer = setTimeout(() => {
       setTrailDots((prev) => prev.slice(1));
-    }, 60);
+    }, 50);
     return () => clearTimeout(timer);
   }, [trailDots]);
 
@@ -103,12 +86,14 @@ export function CustomCursor() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999]">
-      {/* Rainbow trail dots */}
+      {/* Theme-colored trail dots — same size as ring, fading out */}
       {trailDots.map((dot, i) => {
         const progress = (i + 1) / trailDots.length;
-        const opacity = progress * 0.6;
-        const size = 2 + progress * 4;
-        const colorIndex = Math.floor((dot.id * 0.7) % RAINBOW.length);
+        const opacity = progress * 0.3;
+        const size = 24;
+        // Alternate between primary and secondary for subtle variation
+        const usePrimary = i % 3 !== 0;
+        const color = usePrimary ? "var(--primary)" : "var(--secondary)";
         return (
           <div
             key={dot.id}
@@ -119,9 +104,9 @@ export function CustomCursor() {
               width: size,
               height: size,
               opacity,
-              background: RAINBOW[colorIndex],
-              boxShadow: `0 0 ${size + 2}px ${RAINBOW[colorIndex]}40`,
-              transition: "opacity 0.2s ease-out",
+              background: `rgb(${color} / ${0.08 + progress * 0.12})`,
+              border: `1px solid rgb(${color} / ${opacity * 0.6})`,
+              transition: "opacity 0.3s ease-out",
             }}
           />
         );
