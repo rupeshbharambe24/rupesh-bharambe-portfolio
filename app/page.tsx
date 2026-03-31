@@ -37,7 +37,7 @@ export default function Home() {
               }`}
               style={
                 theme.id === t.id
-                  ? { ringColor: `rgb(${t.colors.primary})` }
+                  ? { ["--tw-ring-color" as string]: `rgb(${t.colors.primary})` }
                   : undefined
               }
             >

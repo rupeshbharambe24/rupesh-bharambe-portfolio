@@ -21,7 +21,7 @@ export function TypingText({
   const [isDeleting, setIsDeleting] = useState(false);
   const textIndex = useRef(0);
   const charIndex = useRef(0);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const tick = useCallback(() => {
     const currentFullText = texts[textIndex.current];
