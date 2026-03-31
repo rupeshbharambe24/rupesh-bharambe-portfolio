@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { profile } from "@/data/profile";
 import { TypingText } from "@/components/shared/typing-text";
@@ -16,9 +17,16 @@ export function Hero() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="mb-8"
       >
-        <div className="relative mx-auto flex h-28 w-28 items-center justify-center rounded-full gradient-primary p-[3px]">
-          <div className="flex h-full w-full items-center justify-center rounded-full bg-theme-bg">
-            <span className="text-4xl font-black gradient-text">R</span>
+        <div className="relative mx-auto flex h-32 w-32 items-center justify-center rounded-full gradient-primary p-[3px] md:h-36 md:w-36">
+          <div className="h-full w-full overflow-hidden rounded-full">
+            <Image
+              src="/images/profile.png"
+              alt="Rupesh Bharambe"
+              width={144}
+              height={144}
+              className="h-full w-full object-cover"
+              priority
+            />
           </div>
         </div>
       </motion.div>

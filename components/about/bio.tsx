@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { profile } from "@/data/profile";
 
@@ -16,11 +17,17 @@ export function Bio() {
       <div className="flex flex-col gap-8 md:flex-row md:items-start">
         {/* Photo placeholder */}
         <motion.div
-          className="gradient-primary flex h-40 w-40 shrink-0 items-center justify-center self-center rounded-xl text-5xl font-black text-white md:self-start"
+          className="h-40 w-36 shrink-0 self-center overflow-hidden rounded-xl border-2 border-theme md:self-start"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          R
+          <Image
+            src="/images/profile.png"
+            alt="Rupesh Bharambe"
+            width={144}
+            height={160}
+            className="h-full w-full object-cover"
+          />
         </motion.div>
 
         {/* Bio text */}
