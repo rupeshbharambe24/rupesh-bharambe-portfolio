@@ -81,6 +81,16 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Theme CSS variables — default Obsidian */
+  --theme-background: 10 10 15;
+  --theme-foreground: 245 245 250;
+  --theme-card: 18 18 25;
+  --theme-card-border: 30 30 42;
+  --theme-primary: 139 92 246;
+  --theme-secondary: 6 182 212;
+  --theme-muted: 30 30 42;
+  --theme-muted-foreground: 140 140 160;
 }
 
 .dark {
@@ -115,6 +125,81 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* ── Theme utility classes ── */
+
+.bg-theme-bg {
+  background-color: rgb(var(--theme-background));
+}
+
+.bg-theme-card {
+  background-color: rgb(var(--theme-card));
+}
+
+.border-theme {
+  border-color: rgb(var(--theme-card-border));
+}
+
+.text-theme-fg {
+  color: rgb(var(--theme-foreground));
+}
+
+.text-theme-primary {
+  color: rgb(var(--theme-primary));
+}
+
+.text-theme-secondary {
+  color: rgb(var(--theme-secondary));
+}
+
+.text-theme-muted {
+  color: rgb(var(--theme-muted-foreground));
+}
+
+.gradient-primary {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--theme-primary)),
+    rgb(var(--theme-secondary))
+  );
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--theme-primary)),
+    rgb(var(--theme-secondary))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Dark scrollbar ── */
+
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgb(var(--theme-background));
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(var(--theme-muted));
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--theme-primary) / 0.5);
+}
+
+/* Firefox dark scrollbar */
+.dark {
+  scrollbar-color: rgb(var(--theme-muted)) rgb(var(--theme-background));
+  scrollbar-width: thin;
 }
 
 @layer base {
