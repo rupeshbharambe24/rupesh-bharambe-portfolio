@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Github, ExternalLink } from "lucide-react";
+import { Trophy, GitBranch, ExternalLink } from "lucide-react";
 import {
   type Project,
   categoryLabels,
@@ -140,7 +140,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
           {project.links.length > 0 && (
             <div className="mt-auto flex gap-3 pt-1">
               {project.links.map((link) => {
-                const Icon = link.label === "GitHub" ? Github : ExternalLink;
+                const Icon = link.label === "GitHub" ? GitBranch : ExternalLink;
                 return (
                   <a
                     key={link.url}

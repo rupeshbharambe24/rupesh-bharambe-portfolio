@@ -8,7 +8,7 @@ const stats = [
   { value: 15, suffix: "+", label: "finalist.finishes", color: "139 92 246" },
   { value: 1, label: "international", color: "34 211 238" },
   { value: 7, label: "certifications", color: "236 72 153" },
-] as const;
+];
 
 export function StatsSummary() {
   return (
