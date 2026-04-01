@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/page-header";
 import { Bio } from "@/components/about/bio";
-import { Education } from "@/components/about/education";
-import { ExperienceTimeline } from "@/components/about/experience-timeline";
-import { Leadership } from "@/components/about/leadership";
+import { JourneyTimeline } from "@/components/about/journey-timeline";
 import { ResumeSection } from "@/components/about/resume-section";
 
 export const metadata: Metadata = {
@@ -18,9 +16,7 @@ export default function AboutPage() {
       <div className="space-y-12">
         <PageHeader comment="about-me" title="Get to Know Me" />
         <Bio />
-        <Education />
-        <ExperienceTimeline />
-        <Leadership />
+        <JourneyTimeline />
         <ResumeSection />
       </div>
     </div>
