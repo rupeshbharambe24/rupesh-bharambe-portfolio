@@ -1,4 +1,4 @@
-export type TimelineEventType = "education" | "internship" | "hackathon-win" | "achievement" | "leadership" | "project";
+export type TimelineEventType = "education" | "internship" | "hackathon-win" | "achievement" | "leadership";
 
 export interface TimelineEvent {
   date: string;
@@ -16,7 +16,6 @@ export const eventColors: Record<TimelineEventType, string> = {
   "hackathon-win": "249 115 22",
   achievement: "234 179 8",
   leadership: "139 92 246",
-  project: "34 211 238",
 };
 
 export const eventIcons: Record<TimelineEventType, string> = {
@@ -25,7 +24,6 @@ export const eventIcons: Record<TimelineEventType, string> = {
   "hackathon-win": "🏆",
   achievement: "🥈",
   leadership: "🎯",
-  project: "🚀",
 };
 
 export const timelineEvents: TimelineEvent[] = [
@@ -105,14 +103,6 @@ export const timelineEvents: TimelineEvent[] = [
     description: "Coordinated and organized a robotics & AI hackathon event",
   },
   {
-    date: "Jul 2025",
-    sortKey: 202507,
-    type: "project",
-    title: "Started MOSDAC-Bot for ISRO",
-    subtitle: "Knowledge Graph + LLM Satellite Assistant",
-    description: "Building a conversational assistant for querying ISRO satellite data",
-  },
-  {
     date: "Sep 2025",
     sortKey: 202509,
     type: "hackathon-win",
@@ -136,6 +126,7 @@ export const timelineEvents: TimelineEvent[] = [
     title: "SIH 2025 Grand Finale — Top 5",
     subtitle: "VETRA: Animal Classification",
     description: "Reached top 5 with solution for Ministry of Fisheries",
+    photo: "/images/hackathons/sih2025.jpg",
   },
   {
     date: "Mar 2026",

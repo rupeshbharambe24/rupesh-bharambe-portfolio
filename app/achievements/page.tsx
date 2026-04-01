@@ -4,6 +4,7 @@ import { StatsSummary } from "@/components/achievements/stats-summary";
 import { TrophyWall } from "@/components/achievements/trophy-wall";
 import { OtherHonors } from "@/components/achievements/other-honors";
 import { CertificationsGrid } from "@/components/achievements/certifications-grid";
+import { PressMedia } from "@/components/achievements/press-media";
 
 export const metadata: Metadata = {
   title: "Achievements | Rupesh Bharambe",
@@ -20,6 +21,7 @@ export default function AchievementsPage() {
         <TrophyWall />
         <OtherHonors />
         <CertificationsGrid />
+        <PressMedia />
       </div>
     </div>
   );

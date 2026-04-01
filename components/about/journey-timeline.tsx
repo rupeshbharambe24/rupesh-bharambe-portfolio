@@ -18,7 +18,6 @@ const typeLabels: Record<TimelineEventType, string> = {
   "hackathon-win": "Hackathon Win",
   achievement: "Achievement",
   leadership: "Leadership",
-  project: "Project",
 };
 
 export function JourneyTimeline() {
@@ -37,7 +36,6 @@ export function JourneyTimeline() {
     "education",
     "leadership",
     "achievement",
-    "project",
   ];
 
   return (

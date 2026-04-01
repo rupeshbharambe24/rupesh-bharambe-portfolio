@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/page-header";
 import { Bio } from "@/components/about/bio";
+import { TechStack } from "@/components/about/tech-stack";
 import { JourneyTimeline } from "@/components/about/journey-timeline";
 import { ResumeSection } from "@/components/about/resume-section";
 
@@ -16,6 +17,7 @@ export default function AboutPage() {
       <div className="space-y-12">
         <PageHeader comment="about-me" title="Get to Know Me" />
         <Bio />
+        <TechStack />
         <JourneyTimeline />
         <ResumeSection />
       </div>
