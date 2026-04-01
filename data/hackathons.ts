@@ -77,7 +77,7 @@ export const hackathonWins: HackathonWin[] = [
     award: "3rd Runner Up (Top 5) — Pillai College of Engg, Mumbai",
     description:
       "Satellite data platform built during a competitive national hackathon.",
-    role: "ML Engineer",
+    role: "Team Lead",
     color: "34 197 94",
     isWin: true,
     photo: "/images/hackathons/hackcelestial.jpg",
