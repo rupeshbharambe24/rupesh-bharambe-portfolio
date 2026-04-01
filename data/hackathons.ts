@@ -29,7 +29,7 @@ export const hackathonWins: HackathonWin[] = [
     role: "Team Lead",
     color: "249 115 22",
     isWin: true,
-    photo: "/images/hackathons/sih2024.jpg",
+    photo: "/images/hackathons/sih2024.jpeg",
     newsArticles: ["/images/news/sih-news.jpg", "/images/news/sih-news2.jpg"],
   },
   {
