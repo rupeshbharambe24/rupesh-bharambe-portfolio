@@ -53,7 +53,7 @@ export function AboutSkillsTeaser() {
               ))}
             </div>
             <Link
-              href="/skills"
+              href="/about"
               className="text-sm font-medium text-theme-primary transition-colors hover:text-theme-secondary"
             >
               +{totalSkills - 6} more &rarr;

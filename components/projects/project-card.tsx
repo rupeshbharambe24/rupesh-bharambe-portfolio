@@ -40,7 +40,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {categoryLabels[project.category]}
         </span>
 
-        {(project.status === "ongoing" || project.status === "in-progress") && (
+        {project.status === "active" && (
           <span className="flex items-center gap-1 text-xs text-green-400">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-400" />
             Active
@@ -60,17 +60,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Metrics (first 2) */}
       {project.metrics.length > 0 && (
-        <div className="mb-4 space-y-1.5">
+        <div className="mb-4 flex gap-3">
           {project.metrics.slice(0, 2).map((metric) => (
-            <div
-              key={metric}
-              className="flex items-start gap-2 text-xs text-theme-muted"
-            >
+            <div key={metric.label}>
               <span
-                className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full"
-                style={{ backgroundColor: `rgb(${catColor})` }}
-              />
-              {metric}
+                className="text-sm font-extrabold"
+                style={{ color: `rgb(${catColor})` }}
+              >
+                {metric.value}
+              </span>
+              <span className="ml-1 font-mono text-[8px] text-theme-muted">
+                {metric.label}
+              </span>
             </div>
           ))}
         </div>

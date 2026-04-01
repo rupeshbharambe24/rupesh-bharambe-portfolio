@@ -106,18 +106,17 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
 
           {/* Metrics */}
           {project.metrics.length > 0 && (
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
               {project.metrics.map((metric) => (
-                <div
-                  key={metric}
-                  className="rounded-lg px-3 py-1.5"
-                  style={{ backgroundColor: `rgb(${accent} / 0.08)` }}
-                >
+                <div key={metric.label}>
                   <span
-                    className="font-mono text-xs"
+                    className="text-base font-extrabold"
                     style={{ color: `rgb(${accent})` }}
                   >
-                    {metric}
+                    {metric.value}
+                  </span>
+                  <span className="ml-1 font-mono text-[9px] text-theme-muted">
+                    {metric.label}
                   </span>
                 </div>
               ))}

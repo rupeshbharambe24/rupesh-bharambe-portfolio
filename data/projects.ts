@@ -29,6 +29,11 @@ export interface ProjectLink {
   url: string;
 }
 
+export interface ProjectMetric {
+  label: string;
+  value: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -36,255 +41,176 @@ export interface Project {
   category: ProjectCategory;
   featured: boolean;
   hackathonWin?: string;
-  status: "completed" | "in-progress" | "ongoing";
+  status: "completed" | "active";
   dateRange: string;
-  metrics: string[];
+  metrics: ProjectMetric[];
   techStack: string[];
   links: ProjectLink[];
 }
 
 export const projects: Project[] = [
-  // ── Featured Projects ─────────────────────────────────────────────
+  // ── Featured Projects (hackathon winners) ─────────────────────────
   {
-    slug: "edfs-sih24",
-    title: "EDFS — Emergency Data Flow System",
+    slug: "edfs",
+    title: "Real-Time Electricity Demand Forecasting",
     description:
-      "SIH'24 Grand Finale winner. Real-time emergency response coordination system using AI-driven data flow optimization for disaster management and resource allocation.",
+      "Problem: Delhi's power grid lacked accurate short-term demand forecasting. Solution: Built SARIMAX + Transformer hybrid model on 12+ years of historical data enriched with real-time weather. Impact: 98%+ accuracy at 5-minute granularity, deployed on GCP with auto-retraining pipeline.",
     category: "ai-ml",
     featured: true,
     hackathonWin: "SIH'24 Grand Finale Winner",
     status: "completed",
-    dateRange: "Sep 2024 – Dec 2024",
+    dateRange: "Sep 2024 — Dec 2024",
     metrics: [
-      "1st Place — Smart India Hackathon 2024",
-      "National-level grand finale winner",
-      "Real-time emergency data coordination",
+      { label: "accuracy", value: "98%+" },
+      { label: "granularity", value: "5min" },
+      { label: "data span", value: "12yr" },
     ],
-    techStack: [
-      "Python",
-      "FastAPI",
-      "React",
-      "TensorFlow",
-      "WebSocket",
-      "PostgreSQL",
-      "Docker",
-    ],
+    techStack: ["SARIMAX", "Transformers", "GCP", "Docker", "Firebase", "React", "Chart.js"],
     links: [
-      { label: "GitHub", url: "https://github.com/rupeshbharambe24" },
+      { label: "GitHub", url: "https://github.com/rupeshbharambe24/Gridalytics" },
     ],
   },
   {
-    slug: "face-liveness-rackathon",
+    slug: "face-liveness",
     title: "Face Liveness Detection System",
     description:
-      "RACKATHON winning project. Anti-spoofing face authentication system using depth estimation and micro-expression analysis to detect presentation attacks.",
+      "Problem: Facial recognition systems are vulnerable to spoofing attacks (photos, videos, masks). Solution: Custom neural network with 477 facial landmarks + mathematical formulae for dynamic response-based liveness. Impact: 99% accuracy at <200ms latency, optimized for low-resource devices — applicable to KYC, banking, proctoring.",
     category: "cv",
     featured: true,
-    hackathonWin: "RACKATHON Winner",
+    hackathonWin: "RACKATHON 2025 Winner",
     status: "completed",
-    dateRange: "Mar 2024 – Apr 2024",
+    dateRange: "Sep 2024 — Mar 2025",
     metrics: [
-      "1st Place — RACKATHON",
-      "99.2% spoof detection accuracy",
-      "Real-time inference under 100ms",
+      { label: "accuracy", value: "99%" },
+      { label: "latency", value: "<200ms" },
+      { label: "landmarks", value: "477" },
     ],
-    techStack: [
-      "Python",
-      "OpenCV",
-      "PyTorch",
-      "MediaPipe",
-      "Flask",
-      "TensorFlow Lite",
-    ],
+    techStack: ["TensorFlow", "OpenCV", "MediaPipe", "Flask", "Docker", "scikit-learn"],
     links: [
       { label: "GitHub", url: "https://github.com/rupeshbharambe24" },
     ],
   },
   {
-    slug: "at-scale-ai",
-    title: "@scale AI — Scalable AI Pipeline",
+    slug: "scale-ai",
+    title: "Enterprise AI/ML Solution Suite",
     description:
-      "Hackathon-winning scalable AI inference pipeline with auto-scaling, load balancing, and model versioning for production ML deployments.",
+      "Problem: Real industry datasets with limited availability and high-performance constraints. Solution: End-to-end ML pipelines with forecasting, anomaly detection, and optimization on actual enterprise data. Impact: Won @scale AI Hackathon — evaluated by Findability Sciences / NSBT industry experts.",
     category: "ai-ml",
     featured: true,
-    hackathonWin: "Hackathon Winner",
+    hackathonWin: "@scale 2026 Winner",
     status: "completed",
-    dateRange: "Jan 2025 – Feb 2025",
-    metrics: [
-      "1st Place — @scale Hackathon",
-      "Auto-scaling inference pipeline",
-      "Sub-second model switching",
-    ],
-    techStack: [
-      "Python",
-      "FastAPI",
-      "Docker",
-      "Kubernetes",
-      "Redis",
-      "PyTorch",
-      "Nginx",
-    ],
+    dateRange: "Mar 2026",
+    metrics: [],
+    techStack: ["Python", "ML", "EDA", "Feature Engineering", "React", "FastAPI"],
     links: [
-      { label: "GitHub", url: "https://github.com/rupeshbharambe24" },
+      { label: "GitHub", url: "https://github.com/rupeshbharambe24/Scale_AI_Webapp" },
     ],
   },
 
   // ── Standard Projects ─────────────────────────────────────────────
   {
     slug: "mosdac-bot",
-    title: "MOSDAC-Bot — ISRO Satellite Data Assistant",
+    title: "MOSDAC-Bot — ISRO Satellite Assistant",
     description:
-      "Conversational AI assistant for querying ISRO's MOSDAC satellite data repository. Uses RAG architecture to provide natural-language access to meteorological and oceanographic datasets.",
+      "Problem: ISRO satellite data repositories are difficult to query without domain expertise. Solution: Knowledge Graph (Neo4j) + LLM conversational assistant with FAISS vector search and RAG pipeline. Impact: 50+ data sources accessible via natural language, <2s response time, 100K+ graph nodes.",
     category: "llm-rag",
     featured: false,
-    status: "completed",
-    dateRange: "Aug 2024 – Oct 2024",
+    status: "active",
+    dateRange: "Jul 2025 — Present",
     metrics: [
-      "RAG-powered satellite data retrieval",
-      "Natural language query interface",
-      "Integrated with MOSDAC APIs",
+      { label: "data sources", value: "50+" },
+      { label: "response", value: "<2s" },
+      { label: "graph nodes", value: "100K+" },
     ],
-    techStack: [
-      "Python",
-      "LangChain",
-      "OpenAI API",
-      "ChromaDB",
-      "FastAPI",
-      "React",
-    ],
+    techStack: ["Neo4j", "FAISS", "HuggingFace", "React", "TypeScript", "Docker"],
     links: [
-      { label: "GitHub", url: "https://github.com/rupeshbharambe24" },
+      { label: "GitHub", url: "https://github.com/rupeshbharambe24/MOSDAC-Bot-ISRO" },
     ],
   },
   {
     slug: "terrabyte",
-    title: "TerraByte — Geospatial Analysis Platform",
+    title: "TerraByte — AI + IoT Agriculture Platform",
     description:
-      "Geospatial data analysis and visualization platform for environmental monitoring, combining satellite imagery with ML-based land-use classification.",
-    category: "ai-ml",
+      "Problem: Farmers lack data-driven tools for crop planning, irrigation, and disease detection. Solution: Unified platform with 8 sensor types, 38-class disease detection (94% accuracy), and smart irrigation. Impact: Potentially 30% yield increase and 40% water reduction.",
+    category: "iot",
     featured: false,
-    status: "completed",
-    dateRange: "Jun 2024 – Aug 2024",
+    status: "active",
+    dateRange: "May 2025 — Present",
     metrics: [
-      "Satellite imagery analysis",
-      "ML-based land-use classification",
-      "Interactive geospatial visualizations",
+      { label: "sensor types", value: "8" },
+      { label: "diseases", value: "38" },
+      { label: "accuracy", value: "94%" },
     ],
-    techStack: [
-      "Python",
-      "TensorFlow",
-      "Rasterio",
-      "GeoPandas",
-      "Streamlit",
-      "PostgreSQL",
-    ],
-    links: [
-      { label: "GitHub", url: "https://github.com/rupeshbharambe24" },
-    ],
+    techStack: ["PyTorch", "Raspberry Pi", "Arduino", "React", "Flask", "Firebase"],
+    links: [],
   },
   {
     slug: "sldts",
-    title: "SLDTS — Sign Language Detection & Translation",
+    title: "SLDTS — Sign Language Translation",
     description:
-      "Real-time sign language detection and translation system using computer vision and deep learning to bridge communication gaps for hearing-impaired individuals.",
+      "Problem: 1.8M+ deaf individuals in India face communication barriers. Solution: Real-time ISL sign → text/speech and speech → sign translation using MediaPipe + LSTM/Random Forest hybrid. Impact: 88% accuracy across 35 signs at <100ms latency.",
     category: "cv",
     featured: false,
-    status: "completed",
-    dateRange: "Jan 2024 – Mar 2024",
+    status: "active",
+    dateRange: "Feb 2025 — Present",
     metrics: [
-      "Real-time gesture recognition",
-      "Multi-sign vocabulary support",
-      "Accessible UI for hearing-impaired users",
+      { label: "accuracy", value: "88%" },
+      { label: "signs", value: "35" },
+      { label: "latency", value: "<100ms" },
     ],
-    techStack: [
-      "Python",
-      "TensorFlow",
-      "OpenCV",
-      "MediaPipe",
-      "Streamlit",
-      "NumPy",
-    ],
+    techStack: ["MediaPipe", "LSTM", "Flask", "JavaScript", "scikit-learn"],
     links: [
-      { label: "GitHub", url: "https://github.com/rupeshbharambe24" },
+      { label: "GitHub", url: "https://github.com/rupeshbharambe24/SLDTS__Sign-Language-Detection-and-Translation" },
     ],
   },
   {
     slug: "ayuunity",
-    title: "AyuUnity — Ayurvedic Health Platform",
+    title: "AyuUnity — Digital Health Ecosystem",
     description:
-      "AI-powered Ayurvedic health recommendation system that combines traditional medicine knowledge with modern ML techniques for personalized wellness plans.",
+      "Problem: Healthcare in India is fragmented — patients juggle multiple apps and portals. Solution: AI-driven unified platform with voice prescriptions, diagnostics, and ABDM/eSanjeevani integration. Impact: 6 dashboards, 4 AI models, 5+ integrations including WhatsApp Cloud API.",
     category: "healthtech",
     featured: false,
     status: "completed",
-    dateRange: "Nov 2023 – Jan 2024",
+    dateRange: "Apr 2025",
     metrics: [
-      "Personalized Ayurvedic recommendations",
-      "ML-driven health assessments",
-      "Traditional + modern medicine integration",
+      { label: "dashboards", value: "6" },
+      { label: "AI models", value: "4" },
+      { label: "integrations", value: "5+" },
     ],
-    techStack: [
-      "Python",
-      "Scikit-learn",
-      "Flask",
-      "React",
-      "MongoDB",
-      "TailwindCSS",
-    ],
-    links: [
-      { label: "GitHub", url: "https://github.com/rupeshbharambe24" },
-    ],
+    techStack: ["React", "Flask", "TensorFlow", "PyTorch", "PostgreSQL", "MongoDB"],
+    links: [],
   },
   {
     slug: "crowdshield",
-    title: "CrowdShield — Crowd Monitoring System",
+    title: "CrowdShield — AI Crowd Monitoring",
     description:
-      "Intelligent crowd density monitoring and safety alert system using computer vision for event management and public safety applications.",
+      "Problem: Large gatherings lack real-time crowd density monitoring for safety. Solution: YOLOv8-based crowd detection with WebSocket live feeds, MQTT alerts, and geographic routing for emergency response. Impact: Real-time monitoring with automated safety alerts.",
     category: "cv",
     featured: false,
     status: "completed",
-    dateRange: "Sep 2023 – Nov 2023",
-    metrics: [
-      "Real-time crowd density estimation",
-      "Safety alert system",
-      "Event management dashboard",
-    ],
-    techStack: [
-      "Python",
-      "YOLOv8",
-      "OpenCV",
-      "Flask",
-      "SQLite",
-      "JavaScript",
-    ],
+    dateRange: "Aug 2025",
+    metrics: [],
+    techStack: ["YOLOv8", "WebSocket", "MQTT", "FastAPI", "React", "TypeScript"],
     links: [
-      { label: "GitHub", url: "https://github.com/rupeshbharambe24" },
+      { label: "GitHub", url: "https://github.com/rupeshbharambe24/CrowdShield--AI-Based-Crowd-and-Disaster-Management" },
     ],
   },
   {
-    slug: "e-wise",
-    title: "E-Wise — Smart E-Waste Management",
+    slug: "ewise",
+    title: "E-Wise — E-Waste Detection + Recycling",
     description:
-      "IoT-enabled e-waste collection and recycling management platform with route optimization and real-time tracking for sustainable electronics disposal.",
-    category: "iot",
+      "Problem: E-waste recycling guidance is inaccessible, especially in regional languages. Solution: YOLO-based detection across 25 e-waste classes with multilingual chatbot (10+ languages) and TTS recommendations. Impact: 92% mAP, accessible recycling guidance across India.",
+    category: "cv",
     featured: false,
     status: "completed",
-    dateRange: "Jul 2023 – Sep 2023",
+    dateRange: "Apr 2025",
     metrics: [
-      "IoT-based e-waste tracking",
-      "Route optimization for collection",
-      "Sustainability impact dashboard",
+      { label: "classes", value: "25" },
+      { label: "languages", value: "10+" },
+      { label: "mAP", value: "92%" },
     ],
-    techStack: [
-      "Python",
-      "Arduino",
-      "MQTT",
-      "Flask",
-      "React",
-      "PostgreSQL",
-    ],
-    links: [
-      { label: "GitHub", url: "https://github.com/rupeshbharambe24" },
-    ],
+    techStack: ["YOLOv8", "Gemini API", "React", "Flask", "Tailwind"],
+    links: [],
   },
 ];
 
