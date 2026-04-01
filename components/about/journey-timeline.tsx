@@ -90,7 +90,7 @@ export function JourneyTimeline() {
       {/* Timeline */}
       <div className="relative">
         {/* Center line (desktop) / left line (mobile) */}
-        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[rgb(var(--primary))] via-[rgb(var(--secondary))] to-[rgb(var(--primary)/.2)] md:left-1/2 md:-translate-x-px" />
+        <div className="absolute left-[18px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[rgb(var(--primary))] via-[rgb(var(--secondary))] to-[rgb(var(--primary)/.2)] md:left-1/2 md:-translate-x-px" />
 
         <div className="space-y-6">
           <AnimatePresence mode="popLayout">
@@ -107,22 +107,32 @@ export function JourneyTimeline() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ delay: i * 0.05, duration: 0.4 }}
-                  className={`relative flex items-start gap-4 pl-12 md:pl-0 ${
+                  className={`relative flex items-start gap-4 pl-14 md:pl-0 ${
                     isEven
                       ? "md:flex-row md:pr-[calc(50%+24px)]"
                       : "md:flex-row-reverse md:pl-[calc(50%+24px)]"
                   }`}
                 >
                   {/* Dot on the line */}
-                  <div
-                    className="absolute left-[10px] top-3 z-10 flex h-7 w-7 items-center justify-center rounded-full border-2 text-xs md:left-1/2 md:-translate-x-1/2"
+                  <motion.div
+                    className="absolute left-[2px] top-2 z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 text-lg shadow-lg md:left-1/2 md:-translate-x-1/2"
                     style={{
                       backgroundColor: `rgb(var(--card))`,
                       borderColor: `rgb(${color})`,
+                      boxShadow: `0 0 12px rgb(${color} / 0.3), 0 0 24px rgb(${color} / 0.15)`,
+                    }}
+                    animate={{
+                      y: [0, -4, 0],
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.2,
                     }}
                   >
                     {icon}
-                  </div>
+                  </motion.div>
 
                   {/* Card */}
                   <div
