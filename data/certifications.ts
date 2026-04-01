@@ -2,42 +2,50 @@ export interface Certification {
   title: string;
   issuer: string;
   category: "ai-ml" | "cloud" | "security" | "api";
+  file?: string;
 }
 
 export const certifications: Certification[] = [
   {
-    title: "Deep Learning",
+    title: "Fundamentals of Deep Learning",
     issuer: "NVIDIA",
     category: "ai-ml",
+    file: "/certificates/nvidia-deep-learning.pdf",
   },
   {
     title: "Deep Learning",
-    issuer: "NPTEL",
+    issuer: "IIT / NPTEL",
     category: "ai-ml",
+    file: "/certificates/nptel-deep-learning.pdf",
   },
   {
-    title: "Machine Learning",
-    issuer: "NPTEL (IIT Kharagpur)",
+    title: "Machine Learning (IIT-KHG)",
+    issuer: "IIT Kharagpur / NPTEL",
     category: "ai-ml",
+    file: "/certificates/nptel-ml-iitkgp.pdf",
   },
   {
-    title: "Google Cloud Platform — Core Infrastructure",
-    issuer: "Google Cloud (Coursera)",
+    title: "GCP Core Infrastructure",
+    issuer: "Google / Coursera",
     category: "cloud",
+    file: "/certificates/gcp-core-infra.pdf",
   },
   {
-    title: "Generative AI",
+    title: "GenAI Specialization",
     issuer: "Coursera",
     category: "ai-ml",
+    file: "/certificates/coursera-genai.pdf",
   },
   {
-    title: "Cybersecurity Essentials",
+    title: "Introduction to Cybersecurity",
     issuer: "Cisco",
     category: "security",
+    file: "/certificates/cisco-cybersecurity.pdf",
   },
   {
-    title: "API Expert",
+    title: "API Fundamentals Student Expert",
     issuer: "Postman",
     category: "api",
+    file: "/certificates/postman-api-expert.png",
   },
 ];

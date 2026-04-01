@@ -1,6 +1,6 @@
 "use client";
 
-import { Cpu, Brain, Cloud, Sparkles, Shield, Send } from "lucide-react";
+import { Cpu, Brain, Cloud, Sparkles, Shield, Send, ExternalLink } from "lucide-react";
 import { certifications, type Certification } from "@/data/certifications";
 import {
   StaggerContainer,
@@ -52,6 +52,17 @@ export function CertificationsGrid() {
                 <p className="mt-1 font-mono text-xs text-theme-muted">
                   {cert.issuer}
                 </p>
+                {cert.file && (
+                  <a
+                    href={cert.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 flex items-center gap-1 text-[10px] text-theme-primary transition-colors hover:underline"
+                  >
+                    <ExternalLink size={10} />
+                    View Certificate
+                  </a>
+                )}
               </div>
             </StaggerItem>
           );
