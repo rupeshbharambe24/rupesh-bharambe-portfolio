@@ -18,12 +18,12 @@ export async function GitHubActivity() {
       </div>
 
       {/* Contribution graph */}
-      <div className="overflow-x-auto rounded-lg border border-theme bg-[rgb(var(--theme-background))] p-4">
+      <div className="overflow-x-auto rounded-lg border border-theme p-2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://ghchart.rshah.org/8b5cf6/rupeshbharambe24"
+          src="https://github-readme-activity-graph.vercel.app/graph?username=rupeshbharambe24&bg_color=0d1117&color=9ca3af&line=8b5cf6&point=8b5cf6&area=true&area_color=8b5cf6&hide_border=true&custom_title="
           alt="GitHub contribution graph for rupeshbharambe24"
-          className="w-full"
+          className="w-full rounded"
           loading="lazy"
         />
       </div>
