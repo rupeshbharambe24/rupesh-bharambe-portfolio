@@ -9,6 +9,7 @@ interface MagneticButtonProps {
   onClick?: () => void;
   as?: "button" | "a";
   href?: string;
+  disabled?: boolean;
 }
 
 export function MagneticButton({
@@ -17,6 +18,7 @@ export function MagneticButton({
   onClick,
   as = "button",
   href,
+  disabled,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLElement>(null);
 
@@ -54,6 +56,7 @@ export function MagneticButton({
       className={className}
       onClick={onClick}
       href={as === "a" ? href : undefined}
+      disabled={as === "button" ? disabled : undefined}
       style={{ x: springX, y: springY }}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
