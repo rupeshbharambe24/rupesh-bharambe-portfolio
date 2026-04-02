@@ -99,8 +99,16 @@ export function Footer() {
         {/* ── Bottom row ── */}
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-theme pt-6 sm:flex-row">
           <p className="text-xs text-theme-muted">
-            &copy; {new Date().getFullYear()} Rupesh Bharambe. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Rupesh Bharambe &middot; Built
+            with{" "}
+            <a
+              href="https://claude.ai/claude-code"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-theme-primary transition-colors hover:underline"
+            >
+              Claude Code
+            </a>
           </p>
 
           <div className="flex items-center gap-3">
