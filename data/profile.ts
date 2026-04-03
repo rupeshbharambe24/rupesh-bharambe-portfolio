@@ -35,7 +35,7 @@ export const profile: Profile = {
     "production software",
   ],
   bio: [
-    "I'm a final-year B.Tech student in AI & Data Science, passionate about building intelligent systems that solve real-world problems. From winning Smart India Hackathon 2024 to developing ISRO's satellite data assistant, I thrive at the intersection of research and production engineering.",
+    "I'm a final-year B.Tech student in AI & Data Science, passionate about building intelligent systems that solve real-world problems. From winning Smart India Hackathon 2024 to building SatSage for ISRO's satellite data, I thrive at the intersection of research and production engineering.",
     "When I'm not building AI solutions, I lead the AI & Data Science Students Association as Vice President, mentor junior developers, and coordinate hackathon events. I believe in learning by building — every project is a chance to push boundaries.",
   ],
   roles: ["AI/ML Engineer", "Full-Stack Dev", "Team Leader"],

@@ -109,22 +109,22 @@ export const projects: Project[] = [
 
   // ── Standard Projects ─────────────────────────────────────────────
   {
-    slug: "mosdac-bot",
-    title: "MOSDAC-Bot — ISRO Satellite Assistant",
+    slug: "satsage",
+    title: "SatSage — AI Satellite Data Query Assistant",
     description:
-      "Problem: ISRO satellite data repositories are difficult to query without domain expertise. Solution: Knowledge Graph (Neo4j) + LLM conversational assistant with FAISS vector search and RAG pipeline. Impact: 50+ data sources accessible via natural language, <2s response time, 100K+ graph nodes.",
+      "Problem: ISRO's MOSDAC satellite data portal is difficult to query without domain expertise. Solution: Hybrid Knowledge Graph (Neo4j) + RAG architecture with FAISS vector search, fine-tuned BERT classifier (0.92 F1), and Groq LLM with streaming responses. Impact: 828 indexed documents across 12 satellites, 154 data products, geospatial mapping, and a 38-test evaluation suite.",
     category: "llm-rag",
     featured: false,
     status: "active",
     dateRange: "Jul 2025 — Present",
     metrics: [
-      { label: "data sources", value: "50+" },
-      { label: "response", value: "<2s" },
-      { label: "graph nodes", value: "100K+" },
+      { label: "documents", value: "828" },
+      { label: "BERT F1", value: "0.92" },
+      { label: "satellites", value: "12" },
     ],
-    techStack: ["Neo4j", "FAISS", "HuggingFace", "React", "TypeScript", "Docker"],
+    techStack: ["FastAPI", "Neo4j", "FAISS", "React", "TypeScript", "spaCy", "HuggingFace", "Groq"],
     links: [
-      { label: "GitHub", url: "https://github.com/rupeshbharambe24/MOSDAC-Bot-ISRO" },
+      { label: "GitHub", url: "https://github.com/rupeshbharambe24/SatSage" },
     ],
   },
   {
