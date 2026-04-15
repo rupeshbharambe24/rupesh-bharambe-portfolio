@@ -27,7 +27,7 @@ export interface Profile {
 export const profile: Profile = {
   name: "Rupesh Bharambe",
   title: "AI/ML Engineer",
-  subtitle: "AI/ML Engineer · 5x Hackathon Winner · SIH'24 Grand Finale Winner",
+  subtitle: "AI/ML Engineer · 6x Hackathon Winner · NFPC National Champion",
   taglines: [
     "intelligent systems",
     "AI solutions",

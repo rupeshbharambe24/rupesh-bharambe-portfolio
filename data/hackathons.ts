@@ -21,6 +21,17 @@ export interface Honor {
 
 export const hackathonWins: HackathonWin[] = [
   {
+    name: "National Fraud Prevention Challenge 2026",
+    year: 2026,
+    award: "National Champion — RBIH x IIT Delhi",
+    description:
+      "Led Team SentinelX to build a mule account detection pipeline processing 400M transactions with 615 features. Beat 2000+ participants across 4 phases. Won ₹5,00,000 first prize. Judged by HyperVerge, Slice & IISc leaders.",
+    role: "Team Lead",
+    color: "220 38 38",
+    isWin: true,
+    photo: "/images/hackathons/nfpc2.JPG",
+  },
+  {
     name: "Smart India Hackathon 2024",
     year: 2024,
     award: "Grand Finale Winner",

@@ -51,6 +51,24 @@ export interface Project {
 export const projects: Project[] = [
   // ── Featured Projects (hackathon winners) ─────────────────────────
   {
+    slug: "nfpc",
+    title: "Mule Account Detection Pipeline",
+    description:
+      "Problem: Money mule accounts launder illicit funds through legitimate-looking bank accounts, making fraud detection extremely difficult at scale. Solution: Two-pipeline stacking ensemble (LightGBM + CatBoost + XGBoost) with 615 engineered features, DuckDB streaming over 400M transactions on 16GB RAM, and rank blending for red herring resistance. Impact: National Champion — 0.999 AUC-ROC, 0.91 F1, beat 2000+ participants across 4 phases. Won ₹5,00,000 first prize.",
+    category: "ai-ml",
+    featured: true,
+    hackathonWin: "NFPC 2026 National Champion",
+    status: "completed",
+    dateRange: "Mar 2026 — Apr 2026",
+    metrics: [
+      { label: "AUC-ROC", value: "0.999" },
+      { label: "features", value: "615" },
+      { label: "transactions", value: "400M" },
+    ],
+    techStack: ["LightGBM", "CatBoost", "XGBoost", "DuckDB", "Python", "scikit-learn"],
+    links: [],
+  },
+  {
     slug: "edfs",
     title: "Real-Time Electricity Demand Forecasting",
     description:

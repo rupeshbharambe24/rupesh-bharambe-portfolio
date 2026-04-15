@@ -138,6 +138,15 @@ export const timelineEvents: TimelineEvent[] = [
     photo: "/images/hackathons/scale-ai.jpeg",
   },
   {
+    date: "Apr 2026",
+    sortKey: 202604,
+    type: "hackathon-win",
+    title: "NFPC 2026 — National Champion",
+    subtitle: "RBIH x IIT Delhi · Team SentinelX",
+    description: "Won ₹5,00,000 first prize. Mule account detection pipeline — 0.999 AUC-ROC, 400M transactions, 2000+ participants.",
+    photo: "/images/hackathons/nfpc2.JPG",
+  },
+  {
     date: "Jun 2026",
     sortKey: 202606,
     type: "education",

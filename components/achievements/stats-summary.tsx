@@ -4,7 +4,7 @@ import { AnimatedCounter } from "@/components/shared/animated-counter";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 const stats = [
-  { value: 5, label: "hackathons.won", color: "249 115 22" },
+  { value: 6, label: "hackathons.won", color: "249 115 22" },
   { value: 15, suffix: "+", label: "finalist.finishes", color: "139 92 246" },
   { value: 1, label: "international", color: "34 211 238" },
   { value: 7, label: "certifications", color: "236 72 153" },
